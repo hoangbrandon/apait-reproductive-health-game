@@ -83,21 +83,29 @@ body {
         font-family: "Cabin Sketch", sans-serif;
     }
 
+    .left-panel {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 75%;
+      padding: 40px 20px;
+    }
+
     .character-list {
         align-items: center;
         justify-content: center;
-        width: 100%;
-        padding: 40px, 20px;
+        width: 75%;
+        padding: 40px 20px;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
     .character-list a {
-        font-size: 5rem;
+        font-size: 2rem;
         color: rgb(188, 188, 188);
         text-decoration: none;
-        font-size: 2rem;
         font-weight: bold;
         transition: color 0.3s, transform 0.2s;
         cursor: pointer;
@@ -123,31 +131,48 @@ body {
     }
 
     .character-info {
-        width:50%;
+        width:65%;
         padding: 50px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 15px;
     }
 
     .character-info img {
-        width: 200px;
+        width: 500px;
         height: auto;
         border-radius: 10px;
     }
 
     #start-game {
         display: inline-block;
-        margin-top: 20px;
-        padding: 10px, 20px;
+        text-align: center;
         border-radius: 6px;
+        font-size: 3rem;
+        color: rgb(188, 188, 188);
+        align-self: center;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s, transform 0.2s;
     }
 
+
     #start-game:hover {
-        background: aliceblue;;
+        color: aliceblue;;
+        transform: scale(1.05);
     }
+
+    #start-game:hover::before {
+        content: "<";
+        color: aliceblue;
+    }
+
+    #start-game:hover::after {
+        content: ">";
+        color: aliceblue;
+    }
+  
 
     .cabin-sketch-regular {
     font-family: "Cabin Sketch", sans-serif;
