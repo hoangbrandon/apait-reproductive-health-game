@@ -193,11 +193,13 @@ body {
 
     .game-text {
         color: white;       /* THIS IS IMPORTANT */
-        min-height: 200px;
+        flex-grow: 1; /* Let the text area grow to fill space */
+        min-height: 0; /* Crucial for making overflow scroll work in a flex container */
         text-align: center;
         font-size: 1.8rem;
         line-height: 1.4;
         overflow-y: auto;
+        padding-bottom: 15px; /* Adds a bit of space between text and buttons */
     }
 
 
