@@ -172,16 +172,66 @@ body {
         content: ">";
         color: aliceblue;
     }
-  
+
+    .game-container {
+        position: fixed;         /* keep it anchored at the bottom */
+        bottom: 20px;            /* small gap from the bottom */
+        left: 50%;               /* center horizontally */
+        transform: translateX(-50%); /* adjust to truly center */
+        width: 70vw;             /* 70% of viewport width */
+        height: 30vh;            /* 20% of viewport height */
+        background-color: rgba(56, 56, 56, 0.7); /* semi-transparent dark background */
+        border: 2px solid white; /* optional border for visibility */
+        border-radius: 10px;
+        padding: 15px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* vertically center text */
+        align-items: center;      /* horizontally center text */
+    }
+
+    .game-text {
+        color: white;       /* THIS IS IMPORTANT */
+        min-height: 200px;
+        text-align: center;
+        font-size: 1.8rem;
+        line-height: 1.4;
+        overflow-y: auto;
+    }
+
+
+    .choices {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .choices button {
+        background: none;
+        border: 2px solid aliceblue;
+        border-radius: 6px;
+        padding: 10px;
+        font-size: 1.2rem;
+        color: aliceblue;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .choices button:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
 
     .cabin-sketch-regular {
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+        font-family: "Cabin Sketch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
     .cabin-sketch-bold {
-    font-family: "Cabin Sketch", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+        font-family: "Cabin Sketch", sans-serif;
+        font-weight: 700;
+        font-style: normal;
     }
