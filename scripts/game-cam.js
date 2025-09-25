@@ -7,7 +7,8 @@ const scenes = {
         text: "Brooke meets Cam over coffee.\n\nBrooke: How have you been! Do you have any fun life updates?",
         choices: [
             { text: "Continue", next: "scene1_continue" }
-        ]
+        ],
+        background: "coffee_shop.png"
     },
 
     scene1_continue: {
@@ -50,7 +51,8 @@ const scenes = {
         text: "Few weeks pass\nCam gets a text from a number: Hey Cam, it’s Jess. I recently got tested and was positive for Chlamydia, I’m not sure when I got it but I just wanted to let you know just in case it was when we met.",
         choices: [
             { text: "Continue", next: "yes_text1" }
-        ] 
+        ],
+        background: "bedroom.png"
     },
 
     yes_text1: {
@@ -72,7 +74,8 @@ const scenes = {
         text: "At the Doctors\nDoctor: Hello Cam,  I will be your doctor today and use she/her pronouns. If you don't mind me asking what is your sexual history since you have come in to get tested today?",
         choices: [ 
             { text: "Continue", next: "yes_doctors_continue" }
-        ]
+        ],
+        background: "doctor_office.png"
     },
 
     yes_doctors_continue: {
@@ -206,7 +209,8 @@ const scenes = {
         text: "Next day:\nResults show to be: Positive",
         choices: [
             { text: "Continue", next: "yes_doctors_message" }
-        ]
+        ],
+        background: "bedroom.png"
     },
 
     yes_doctors_message: {
@@ -220,7 +224,8 @@ const scenes = {
         text: "Doctor: Once tested positive for chlamydia there are two types of antibiotics you can take, doxycycline and azithromycin. For Doxyclycine you can take a single dose over  7-14 days and for Azithromycin it is just a single dose orally, but usually recommended for pregnant women.",
         choices: [
             { text: "Continue", next: "yes_next_clinic2" }
-        ]
+        ],
+        background: "doctor_office.png"
     },
 
     yes_next_clinic2: {
@@ -331,7 +336,8 @@ const scenes = {
         text: "Few weeks pass\nCam gets a text from a number: Hey Cam, it’s Jess. I recently got tested and was positive for Chlamydia, I’m not sure when I got it but I just wanted to let you know just in case it was when we met.",
         choices: [
             { text: "Continue", next: "no_text1" }
-        ] 
+        ],
+        background: "bedroom.png"
     },
 
     no_text1: {
@@ -345,7 +351,8 @@ const scenes = {
         text: "Brooke -> Cam: Hi! I just checked and they actually have a testing available this week, we can go whenever you are ready thank you for feeling comfortable to reach out!",
         choices: [
             { text: "Continue", next: "no_doctors" }
-        ]
+        ],
+        background: "doctor_office.png"
     },
 
     no_doctors: {
@@ -407,18 +414,18 @@ const scenes = {
     no_gn_symptoms: {
         text: "Anal infection symptoms:\nPain\nDischarge\nBleeding",
         choices: [ 
-            { text: "Continue", next: "no_doctors_continue5" }
-        ]
-    },
-
-    no_doctors_continue5: {
-        text: "Cam: I have not had any of the symptoms which is why at first I never went to get tested since nothing changed in my body afterwards.",
-        choices: [
-           { text: "Continue", next:  "no_doctors_continue6" }
+            { text: "Continue", next: "no_doctors_continue6" }
         ]
     },
 
     no_doctors_continue6: {
+        text: "Cam: I have not had any of the symptoms which is why at first I never went to get tested since nothing changed in my body afterwards.",
+        choices: [
+           { text: "Continue", next:  "no_doctors_continue7" }
+        ]
+    },
+
+    no_doctors_continue7: {
         text: "Doctor: That's very common and you taking the time to get tested is already a great first step!",
         choices: [
            { text: "Continue", next:  "no_information"}
@@ -495,7 +502,8 @@ const scenes = {
         text: "Next day:\nResults show to be: Positive",
         choices: [
             { text: "Continue", next: "no_doctors_message" }
-        ]
+        ],
+        background: "bedroom.png"
     },
 
     no_doctors_message: {
@@ -509,7 +517,8 @@ const scenes = {
         text: "Doctor: Once tested positive for chlamydia there are two types of antibiotics you can take, doxycycline and azithromycin. For Doxyclycine you can take a single dose over  7-14 days and for Azithromycin it is just a single dose orally, but usually recommended for pregnant women.",
         choices: [
             { text: "Continue", next: "no_next_clinic2" }
-        ]
+        ],
+        background: "doctor_office.png"
     },
 
     no_next_clinic2: {
@@ -579,6 +588,16 @@ function showScene(sceneId) {
     const scene = scenes[sceneId]
     gameText.innerText = scene.text;
     choices.innerHTML = ""; 
+
+    if (scene.background) {
+        const pageWrapper = document.querySelector('.page-wrapper');
+        if (pageWrapper) {
+            // Set the background on the main page container
+            pageWrapper.style.backgroundImage = `url('assets/images/${scene.background}')`;
+            pageWrapper.style.backgroundSize = 'cover';
+            pageWrapper.style.backgroundPosition = 'center center';
+        }
+    }
 
     scene.choices.forEach(choice => {
     const button = document.createElement("button");
