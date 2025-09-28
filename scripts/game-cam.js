@@ -592,7 +592,6 @@ function showScene(sceneId) {
     if (scene.background) {
         const pageWrapper = document.querySelector('.page-wrapper');
         if (pageWrapper) {
-            // Set the background on the main page container
             pageWrapper.style.backgroundImage = `url('assets/images/${scene.background}')`;
             pageWrapper.style.backgroundSize = 'cover';
             pageWrapper.style.backgroundPosition = 'center center';
