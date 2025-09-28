@@ -41,7 +41,7 @@ const scenes = {
     },
 
     scene3_yes: {
-        text: "Thats great its always important to use a condom for safe sex and preventing STIs, but always know I’m here to help give advice about this stuff and here for support as your friend!",
+        text: "Brooke: Thats great its always important to use a condom for safe sex and preventing STIs, but always know I’m here to help give advice about this stuff and here for support as your friend!",
         choices: [
             { text: "Continue", next: "yes_timeskip" }
         ]
@@ -304,6 +304,8 @@ const scenes = {
         ]
     },
 
+    // no
+
     scene3_no: {
         text: "Brooke: Have you met her before or was this the first time?",
         choices: [
@@ -351,15 +353,15 @@ const scenes = {
         text: "Brooke -> Cam: Hi! I just checked and they actually have a testing available this week, we can go whenever you are ready thank you for feeling comfortable to reach out!",
         choices: [
             { text: "Continue", next: "no_doctors" }
-        ],
-        background: "doctor_office.png"
+        ]
     },
 
     no_doctors: {
         text: "At the Doctors\nDoctor: Hello Cam,  I will be your doctor today and use she/her pronouns. If you don't mind me asking what is your sexual history since you have come in to get tested today?",
         choices: [ 
             { text: "Continue", next: "no_doctors_continue" }
-        ]
+        ],
+        background: "doctor_office.png"
     },
 
     no_doctors_continue: {
@@ -439,7 +441,6 @@ const scenes = {
         ]
     },
 
-
     no_men_info: {
         text: "Penile infection:\nPainful infection in testicles\nRare - Infertility",
         choices: [
@@ -496,7 +497,6 @@ const scenes = {
             { text: "Continue", next: "no_next_day" }
         ]
     },
-
 
     no_next_day: {
         text: "Next day:\nResults show to be: Positive",
